@@ -1,0 +1,34 @@
+name: "FastAPI_MCP_PoC Server"
+version: "1.0.0"
+
+tools:
+  - name: "calculator"
+    description: "A simple calculator tool"
+    input_schema:
+      type: "object"
+      properties:
+        expression:
+          type: "string"
+          description: "The mathematical expression to evaluate"
+      required: ["expression"]
+    code: |
+      import math
+      result = eval(expression)
+      return f"The result is: {result}"
+
+  - name: "echo"
+    description: "Echoes back the input"
+    input_schema:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+      required: ["message"]
+    code: |
+      return f"Echo: {message}"
+
+resources:
+  - name: "system_info"
+    description: "Information about the server"
+    uri: "info://system"
+    content: "FastAPI_MCP_PoC Server running on FastAPI and MCP."

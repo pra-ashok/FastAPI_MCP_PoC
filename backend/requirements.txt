@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+mcp[fastapi]
+pyyaml
+pydantic
+python-dotenv
+chromadb
+jinja2
+python-multipart
